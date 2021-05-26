@@ -6,6 +6,7 @@
     
     <color name="colorHintLocation">#8A8382</color>
     <color name="colorLightPurple">#8A83FF</color>
+    <color name="colorDarkPurple">#5D57AC</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorSeparator">#DADAE0</color>
 </resources>

@@ -11,4 +11,7 @@
     <string name="my_location_text">Мое местоположение</string>
     <string name="choose_on_map_text">Выбрать на карте</string>
     <string name="point_text">%1$s, %2$s</string>
+    <string name="content_description">Изображение</string>
+    <string name="get_routes">Получить маршруты!</string>
+    <string name="choose_points">Выберите начальную и конечную точки</string>
 </resources>
