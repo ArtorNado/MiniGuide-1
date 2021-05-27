@@ -4,9 +4,7 @@ import com.example.miniguide.map.data.MapRepository
 import com.example.miniguide.routes.data.RoutesRepository
 import com.example.miniguide.routes.presentation.pointSearch.model.PointModel
 import com.mapbox.geojson.Point
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class RoutesInteractorImpl @Inject constructor(
@@ -23,8 +21,12 @@ class RoutesInteractorImpl @Inject constructor(
     }
 
     override suspend fun createRoute(startPoint: PointModel, endPoint: PointModel) {
-        val placesToVisit = routesRepository.getPointsToVisit(startPoint, endPoint)
-        mapRepository.createRoute(placesToVisit)
+        val listOfPoints: MutableList<Point> = mutableListOf()
+        val placesToVisit = routesRepository.getPointsToVisit(startPoint, endPoint).points
+        placesToVisit.forEach {
+            listOfPoints.add(Point.fromLngLat(it[0], it[1]))
+        }
+        mapRepository.createRoute(listOfPoints)
     }
 
     override fun startPointFlow(): Flow<PointModel> = routesRepository.selectStartPointFlow()
