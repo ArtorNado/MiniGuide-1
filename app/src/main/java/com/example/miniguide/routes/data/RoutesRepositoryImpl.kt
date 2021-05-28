@@ -32,26 +32,10 @@ class RoutesRepositoryImpl @Inject constructor(
         startPoint: PointModel,
         endPoint: PointModel
     ): RoutesResponse = withContext(Dispatchers.Default) {
-//        val start = Point.fromLngLat(startPoint.longitude, startPoint.latitude)
-//        val end = Point.fromLngLat(endPoint.longitude, endPoint.latitude)
-//        val firstPoint = Point.fromLngLat(151.186335, -33.931479)
-//        val secondPoint = Point.fromLngLat(151.201670, -33.918223)
-//        val thirdPoint = Point.fromLngLat(151.178224, -33.922789)
-//        val fourthPoint = Point.fromLngLat(151.188383, -33.901126)
-//        val fifthPoint = Point.fromLngLat(151.203758, -33.890750)
-
-          service.getRoutes(
-                listOf(startPoint.latitude, startPoint.longitude),
-                listOf(endPoint.latitude, endPoint.longitude)
-            )
-//            list = if (response.isSuccessful) {
-//                response.body()?.points!!
-//            } else {
-//                emptyList()
-//            }
-//            //listOf<Point>(start, firstPoint, secondPoint, thirdPoint, fourthPoint, fifthPoint, end)
-//        }
-//        return list
+        service.getRoutes(
+            listOf(startPoint.latitude, startPoint.longitude),
+            listOf(endPoint.latitude, endPoint.longitude)
+        )
     }
 
     override fun selectStartPointFlow(): Flow<PointModel> = startPointFlow
