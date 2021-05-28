@@ -10,10 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceFactory {
-    val gson: Gson = GsonBuilder().registerTypeAdapter(
-        RoutesResponse::class.java,
-        ListTypeAdapter(RoutesResponse::class.java)
-    ).create()
+    val gson: Gson = GsonBuilder().create()
 
     private fun <T> getService(okHttpClient: OkHttpClient, cls: Class<T>): T {
         val retrofit = Retrofit.Builder()

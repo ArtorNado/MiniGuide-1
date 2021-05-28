@@ -40,11 +40,18 @@ class RoutesRepositoryImpl @Inject constructor(
 //        val fourthPoint = Point.fromLngLat(151.188383, -33.901126)
 //        val fifthPoint = Point.fromLngLat(151.203758, -33.890750)
 
-        service.getRoutes(
-            listOf(startPoint.latitude, startPoint.longitude),
-            listOf(endPoint.latitude, endPoint.longitude)
-        )
-        //listOf<Point>(start, firstPoint, secondPoint, thirdPoint, fourthPoint, fifthPoint, end)
+          service.getRoutes(
+                listOf(startPoint.latitude, startPoint.longitude),
+                listOf(endPoint.latitude, endPoint.longitude)
+            )
+//            list = if (response.isSuccessful) {
+//                response.body()?.points!!
+//            } else {
+//                emptyList()
+//            }
+//            //listOf<Point>(start, firstPoint, secondPoint, thirdPoint, fourthPoint, fifthPoint, end)
+//        }
+//        return list
     }
 
     override fun selectStartPointFlow(): Flow<PointModel> = startPointFlow

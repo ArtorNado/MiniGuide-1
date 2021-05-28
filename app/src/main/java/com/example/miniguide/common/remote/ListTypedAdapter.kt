@@ -5,7 +5,7 @@ import java.lang.reflect.Type
 
 class ListTypeAdapter<R : BaseResponse>(private val cls: Class<R>) : JsonDeserializer<R> {
     companion object {
-        const val LIST_SERIALIZED_NAME = "list"
+        const val LIST_SERIALIZED_NAME = "routes"
     }
 
     @Throws(JsonParseException::class)
