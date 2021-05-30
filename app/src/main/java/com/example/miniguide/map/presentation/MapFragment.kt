@@ -31,6 +31,7 @@ class MapFragment : BaseFragment<MapViewModel>() {
     private var navigationMapRoute: NavigationMapRoute? = null
     private var mapboxMap: MapboxMap? = null
     private var routes: List<DirectionsRoute>? = null
+    override var isResetBtnVisible: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -93,9 +94,10 @@ class MapFragment : BaseFragment<MapViewModel>() {
     private fun initLocationComponent(mapboxMap: MapboxMap, style: Style) {
         val customLocationComponentOptions = LocationComponentOptions.builder(requireContext())
             .elevation(5f)
+            .foregroundDrawable(R.drawable.ic_marker)
+            .backgroundDrawable(R.drawable.ic_marker)
             .accuracyAlpha(.6f)
             .accuracyColor(Color.RED)
-            .foregroundDrawable(R.drawable.ic_launcher_foreground)
             .build()
 
         mapboxMap.apply {
