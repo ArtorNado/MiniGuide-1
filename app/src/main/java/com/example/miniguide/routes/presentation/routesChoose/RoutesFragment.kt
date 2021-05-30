@@ -1,10 +1,10 @@
 package com.example.miniguide.routes.presentation.routesChoose
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.miniguide.R
 import com.example.miniguide.app.di.Injector
 import com.example.miniguide.common.base.BaseFragment
@@ -41,7 +41,10 @@ class RoutesFragment : BaseFragment<RoutesViewModel>() {
             viewModel.openPointSearch(PointTypeModel.END_POINT)
         }
         button.setOnClickListener {
-            viewModel.onCreateRouteClick()
+            if (!tvStartPoint.text.isNullOrEmpty() && !tvEndPoint.text.isNullOrEmpty()) {
+                viewModel.onCreateRouteClick()
+            } else Toast.makeText(context, getString(R.string.choose_points), Toast.LENGTH_LONG)
+                .show()
         }
     }
 

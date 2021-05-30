@@ -10,8 +10,8 @@
         android:id="@+id/tvStartPoint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/small_margin"
         android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:layout_marginEnd="@dimen/default_margin"
         android:hint="@string/start_point" />
 
@@ -19,8 +19,8 @@
         android:id="@+id/tvEndPoint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/small_margin"
         android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:layout_marginEnd="@dimen/default_margin"
         android:hint="@string/end_point" />
 
@@ -28,6 +28,15 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_margin="@dimen/default_margin"
+        android:background="@drawable/background_oval"
+        android:contentDescription="@string/content_description"
+        android:drawableStart="@drawable/ic_route"
+        android:paddingHorizontal="@dimen/large_margin"
+        android:paddingVertical="@dimen/very_small_margin"
+        android:text="@string/get_routes"
+        android:textAllCaps="false"
+        android:textColor="@color/colorDarkPurple"
+        android:textSize="@dimen/large_text_size" />
 
 </LinearLayout>
